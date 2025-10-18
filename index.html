@@ -14,6 +14,8 @@
       },
     }
   </script>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
 
   <style>
     body {
@@ -69,7 +71,7 @@
 
         <!-- Dark Mode Toggle -->
         <button id="darkModeToggle"
-          class="ml-2 flex items-center justify-center w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white hover:bg-gray-300 dark:hover:bg-gray-600 transition">
+          class="ml-2 flex items-center justify-center w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-0 dark:text-white hover:bg-gray-300 dark:hover:bg-gray-600 transition">
           🌙
         </button>
 
@@ -118,12 +120,13 @@
   </script>
 
   <!-- Hero Section -->
-  <section class="relative flex flex-col lg:flex-row min-h-screen pt-24">
+  <section class="relative flex flex-col lg:flex-row min-h-screen pt-10  fade-in-up">
 
     <!-- Left Side -->
     <div class="relative w-full lg:w-1/2 bg-gradient-to-br from-white via-sky-400 to-blue-600 dark:from-gray-800 dark:via-sky-700 dark:to-blue-900 text-gray-900 dark:text-white px-8 sm:px-12 lg:px-16 py-20 flex flex-col justify-center">
       <div class="z-10">
-        <p class="text-xl sm:text-1xl font-medium mb-3 text-gray-800 dark:text-gray-200">Big Opportunity for your Business.</p>
+
+
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-shadow fade-in-up">
           <span class="text-sky-700 dark:text-sky-400">We help</span>
           <span class="text-white dark:text-white"> you grow</span>
@@ -131,8 +134,12 @@
           <span class="text-white dark:text-white"> faster.</span>
         </h1>
 
+        <p class="text-1xl sm:text-1xl font-semibold mb-6 text-gray-600 dark:text-gray-200  fade-in-up" style="font-family: 'Merriweather', serif;">
+  Discover the Biggest Opportunity to Grow Your Business Faster, Smarter, and Stronger.
+</p>
+
         <a href="#"
-          class="inline-flex items-center justify-center px-8 py-3 text-base font-medium text-sky-700 dark:text-white bg-white dark:bg-sky-600 border-2 border-sky-500 dark:border-sky-400 rounded-full hover:bg-sky-100 dark:hover:bg-sky-700 hover:scale-105 transition-all duration-300 group">
+          class="inline-flex items-center justify-center px-5 py-2 text-base font-medium text-sky-700 dark:text-white bg-white dark:bg-sky-600 border-2 border-sky-500 dark:border-sky-400 rounded-full hover:bg-sky-100 dark:hover:bg-sky-700 hover:scale-105 transition-all duration-300 group  fade-in-up">
           Our Services
           <svg class="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor"
             viewBox="0 0 24 24">
@@ -142,7 +149,7 @@
       </div>
 
       <!-- Decorative Circles -->
-      <div class="absolute inset-0 z-0">
+      <div class="absolute inset-0 z-0  fade-in-up">
         <!-- Bottom Right -->
         <div class="absolute bottom-0 right-0 transform translate-y-1/2 float-circle">
           <svg class="w-24 h-24 sm:w-36 sm:h-36 md:w-48 md:h-48 lg:w-56 lg:h-56 text-sky-300 dark:text-sky-600 opacity-20" fill="currentColor" viewBox="0 0 100 100">
@@ -166,6 +173,24 @@
         class="w-full h-full object-cover transition-transform duration-700 ease-in-out hover:scale-105" />
     </div>
   </section>
+
+  
+<style>
+  /* Fade-in-up animation */
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 0.3s; /* Optional delay */
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
 
 </body>
 </html>
