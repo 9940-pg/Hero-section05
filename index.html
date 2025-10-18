@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hero Section 05 | Sky Blue Business</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class', // important for dark mode
+      theme: {
+        extend: {},
+      },
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    .float-circle {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .float-circle-slow {
+      animation: float 10s ease-in-out infinite;
+    }
+
+    .text-shadow {
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+
+<body class="bg-white dark:bg-gray-900 font-poppins">
+
+  <!-- Header -->
+  <header class="fixed top-0 left-0 w-full bg-white/70 dark:bg-gray-900/70 backdrop-blur-md z-50 border-b border-gray-100 dark:border-gray-700">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4 relative">
+
+      <!-- Logo -->
+      <div class="text-2xl font-bold text-sky-600 dark:text-sky-400">SkyGrow</div>
+
+      <!-- Center Navigation -->
+      <nav class="absolute left-1/2 transform -translate-x-1/2 space-x-8 hidden md:flex">
+        <a href="#" class="nav-link text-gray-900 dark:text-white font-medium border-b-2 border-sky-600 hover:border-sky-600 transition-colors duration-300">Home</a>
+        <a href="#" class="nav-link text-gray-900 dark:text-white font-medium border-b-2 border-transparent hover:border-sky-600 transition-colors duration-300">About</a>
+        <a href="#" class="nav-link text-gray-900 dark:text-white font-medium border-b-2 border-transparent hover:border-sky-600 transition-colors duration-300">Services</a>
+        <a href="#" class="nav-link text-gray-900 dark:text-white font-medium border-b-2 border-transparent hover:border-sky-600 transition-colors duration-300">Contact</a>
+      </nav>
+
+      <!-- Right: CTA + Dark Mode + Hamburger -->
+      <div class="flex items-center gap-3">
+        <!-- Desktop Sign In Button -->
+        <a href="#"
+          class="hidden sm:inline-flex items-center justify-center px-4 py-1 text-base font-medium text-sky-700 bg-white dark:bg-sky-600 border-2 border-sky-500 dark:border-sky-400 rounded-full hover:bg-sky-100 dark:hover:bg-sky-700 hover:scale-105 transition-all duration-300 group">
+          Sign In
+          <svg class="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+
+        <!-- Dark Mode Toggle -->
+        <button id="darkModeToggle"
+          class="ml-2 flex items-center justify-center w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white hover:bg-gray-300 dark:hover:bg-gray-600 transition">
+          🌙
+        </button>
+
+        <!-- Hamburger -->
+        <button id="hamburgerBtn"
+          class="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-1 focus:outline-none">
+          <span class="block w-6 h-[2px] bg-gray-900 dark:bg-white transition-all duration-300"></span>
+          <span class="block w-6 h-[2px] bg-gray-900 dark:bg-white transition-all duration-300"></span>
+          <span class="block w-6 h-[2px] bg-gray-900 dark:bg-white transition-all duration-300"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Drawer -->
+    <div id="mobileMenu"
+      class="absolute top-full left-0 w-full mt-6 bg-white/90 dark:bg-gray-900/90 text-gray-900 dark:text-white flex flex-col items-center space-y-4 py-6 scale-y-0 origin-top transform transition-transform duration-300 md:hidden">
+      <a href="#" class="hover:text-indigo-600 dark:hover:text-sky-400 transition">Home</a>
+      <a href="#" class="hover:text-indigo-600 dark:hover:text-sky-400 transition">About</a>
+      <a href="#" class="hover:text-indigo-600 dark:hover:text-sky-400 transition">Services</a>
+      <a href="#" class="hover:text-indigo-600 dark:hover:text-sky-400 transition">Contact</a>
+      <a href="#"
+        class="flex items-center justify-center gap-2 px-4 py-1 text-base font-medium text-sky-700 bg-white dark:bg-sky-600 border-2 border-sky-600 dark:border-sky-400 rounded-full hover:bg-sky-100 dark:hover:bg-sky-700 transition-all duration-300 group">
+        Sign In
+        <svg class="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <script>
+    // Dark mode toggle
+    const darkBtn = document.getElementById('darkModeToggle');
+    darkBtn.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+    });
+
+    // Hamburger menu toggle
+    const hamburger = document.getElementById('hamburgerBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    let menuOpen = false;
+    hamburger.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+      mobileMenu.style.transform = menuOpen ? 'scaleY(1)' : 'scaleY(0)';
+    });
+  </script>
+
+  <!-- Hero Section -->
+  <section class="relative flex flex-col lg:flex-row min-h-screen pt-24">
+
+    <!-- Left Side -->
+    <div class="relative w-full lg:w-1/2 bg-gradient-to-br from-white via-sky-400 to-blue-600 dark:from-gray-800 dark:via-sky-700 dark:to-blue-900 text-gray-900 dark:text-white px-8 sm:px-12 lg:px-16 py-20 flex flex-col justify-center">
+      <div class="z-10">
+        <p class="text-xl sm:text-1xl font-medium mb-3 text-gray-800 dark:text-gray-200">Big Opportunity for your Business.</p>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-shadow fade-in-up">
+          <span class="text-sky-700 dark:text-sky-400">We help</span>
+          <span class="text-white dark:text-white"> you grow</span>
+          <span class="text-sky-500 dark:text-sky-300"> your business</span>
+          <span class="text-white dark:text-white"> faster.</span>
+        </h1>
+
+        <a href="#"
+          class="inline-flex items-center justify-center px-8 py-3 text-base font-medium text-sky-700 dark:text-white bg-white dark:bg-sky-600 border-2 border-sky-500 dark:border-sky-400 rounded-full hover:bg-sky-100 dark:hover:bg-sky-700 hover:scale-105 transition-all duration-300 group">
+          Our Services
+          <svg class="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Decorative Circles -->
+      <div class="absolute inset-0 z-0">
+        <!-- Bottom Right -->
+        <div class="absolute bottom-0 right-0 transform translate-y-1/2 float-circle">
+          <svg class="w-24 h-24 sm:w-36 sm:h-36 md:w-48 md:h-48 lg:w-56 lg:h-56 text-sky-300 dark:text-sky-600 opacity-20" fill="currentColor" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="40" />
+          </svg>
+        </div>
+        <!-- Top Left -->
+        <div class="absolute top-0 left-0 transform -translate-x-1/2 -translate-y-1/2 float-circle-slow">
+          <svg class="w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 text-blue-300 dark:text-blue-700 opacity-20" fill="currentColor" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="40" />
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Image -->
+    <div class="relative w-full lg:w-1/2">
+      <div class="absolute inset-0 bg-gradient-to-r from-sky-500/30 to-transparent dark:from-blue-900/40 z-10"></div>
+      <img src="https://images.pexels.com/photos/2182973/pexels-photo-2182973.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        alt="Business professional in a meeting"
+        class="w-full h-full object-cover transition-transform duration-700 ease-in-out hover:scale-105" />
+    </div>
+  </section>
+
+</body>
+</html>
+
